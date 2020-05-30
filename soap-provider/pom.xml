@@ -37,7 +37,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!-- tag::xsd[] to produce SOAP-services -->
+            <!-- SOAP Used to generated Domain Java Classes out of a XSD file -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
@@ -51,12 +51,21 @@
                     </execution>
                 </executions>
                 <configuration>
+<!--
+                    <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
+                    <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                    <clearOutputDir>false</clearOutputDir>
+-->
                     <sources>
                         <source>${project.basedir}/src/main/resources/countries.xsd</source>
                     </sources>
+<!--
+                    <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                    <clearOutputDir>false</clearOutputDir>
+-->
                 </configuration>
             </plugin>
-            <!-- end::xsd[] -->
+            <!-- SOAP -->
 
         </plugins>
     </build>
