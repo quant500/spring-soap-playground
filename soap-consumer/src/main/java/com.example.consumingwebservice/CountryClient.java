@@ -10,22 +10,22 @@ import com.example.consumingwebservice.wsdl.GetCountryRequest;
 import com.example.consumingwebservice.wsdl.GetCountryResponse;
 
 public class CountryClient extends WebServiceGatewaySupport {
-
+    private static final String SOAP_ENDPOINT = "http://localhost:8080/ws/countries";
+    private static final String SOAP_ACTION = "http://spring.io/guides/gs-producing-web-service/GetCountryRequest";
     private static final Logger log = LoggerFactory.getLogger(CountryClient.class);
 
     public GetCountryResponse getCountry(String country) {
+        log.info("Requesting data for country: " + country);
+        return (GetCountryResponse) getWebServiceTemplate().marshalSendAndReceive(
+                SOAP_ENDPOINT,
+                createCountryRequest(country),
+                new SoapActionCallback(SOAP_ACTION));
+    }
 
+    private GetCountryRequest createCountryRequest(String country) {
         GetCountryRequest request = new GetCountryRequest();
         request.setName(country);
-
-        log.info("Requesting location for " + country);
-
-        GetCountryResponse response = (GetCountryResponse) getWebServiceTemplate()
-                .marshalSendAndReceive("http://localhost:8080/ws/countries", request,
-                        new SoapActionCallback(
-                                "http://spring.io/guides/gs-producing-web-service/GetCountryRequest"));
-
-        return response;
+        return request;
     }
 
 }

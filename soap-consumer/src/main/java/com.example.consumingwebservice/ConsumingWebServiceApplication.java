@@ -15,14 +15,14 @@ public class ConsumingWebServiceApplication {
     }
 
     @Bean
-    CommandLineRunner lookup(CountryClient quoteClient) {
+    CommandLineRunner lookup(CountryClient countryClient) {
         return args -> {
-            String country = "Spain";
+            String country = "United Kingdom";
 
             if (args.length > 0) {
                 country = args[0];
             }
-            GetCountryResponse response = quoteClient.getCountry(country);
+            GetCountryResponse response = countryClient.getCountry(country);
 
             System.err.println(response.getCountry().getName());
             System.err.println(response.getCountry().getCapital());
