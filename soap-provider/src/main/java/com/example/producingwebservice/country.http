@@ -1,0 +1,16 @@
+# Regarding Content-Type, please read:
+# https://zaiste.net/media_mime_types_for_soap_versions/
+POST /ws/countries HTTP/1.1
+Host: localhost:8080
+Content-Type: text/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://spring.io/guides/gs-producing-web-service">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getCountryRequest>
+            <gs:name>Spain</gs:name>
+        </gs:getCountryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+###
