@@ -7,15 +7,15 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import io.spring.guides.gs_producing_web_service.GetCountryRequest;
-import io.spring.guides.gs_producing_web_service.GetCountryResponse;
+import ch.domain.ws.country_namespace.GetCountryRequest;
+import ch.domain.ws.country_namespace.GetCountryResponse;
 
 /**
  * This SOAP Endpoint handles all incoming requests.
  */
 @Endpoint // registers the class with Spring WS as a Web Service Endpoint
 public class CountrySoapEndpoint {
-    private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
+    private static final String NAMESPACE_URI = "http://domain.ch/ws/country-namespace";
     private final CountryRepository countryRepository;
 
     @Autowired

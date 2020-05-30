@@ -4,8 +4,8 @@ import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.spring.guides.gs_producing_web_service.Country;
-import io.spring.guides.gs_producing_web_service.Currency;
+import ch.domain.ws.country_namespace.Country;
+import ch.domain.ws.country_namespace.Currency;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 

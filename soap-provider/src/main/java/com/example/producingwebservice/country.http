@@ -5,7 +5,7 @@ Host: localhost:8080
 Content-Type: text/xml
 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://spring.io/guides/gs-producing-web-service">
+                  xmlns:gs="http://domain.ch/ws/country-namespace">
     <soapenv:Header/>
     <soapenv:Body>
         <gs:getCountryRequest>

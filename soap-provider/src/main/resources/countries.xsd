@@ -1,6 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:tns="http://spring.io/guides/gs-producing-web-service"
-           targetNamespace="http://spring.io/guides/gs-producing-web-service"
+           xmlns:sch="http://domain.ch/ws/country-namespace"
+           targetNamespace="http://domain.ch/ws/country-namespace"
            elementFormDefault="qualified"
 >
 
@@ -15,7 +15,7 @@
     <xs:element name="getCountryResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="country" type="tns:country"/>
+                <xs:element name="country" type="sch:country"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -25,7 +25,7 @@
             <xs:element name="name" type="xs:string"/>
             <xs:element name="population" type="xs:int"/>
             <xs:element name="capital" type="xs:string"/>
-            <xs:element name="currency" type="tns:currency"/>
+            <xs:element name="currency" type="sch:currency"/>
         </xs:sequence>
     </xs:complexType>
 

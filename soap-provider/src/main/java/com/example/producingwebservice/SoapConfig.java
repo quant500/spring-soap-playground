@@ -20,7 +20,7 @@ public class SoapConfig
         // which configures the annotation-driven Spring-WS programming model.
         extends WsConfigurerAdapter {
 
-    public static final String TARGET_NAMESPACE = "http://spring.io/guides/gs-producing-web-service";
+    public static final String TARGET_NAMESPACE = "http://domain.ch/ws/country-namespace";
 
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
