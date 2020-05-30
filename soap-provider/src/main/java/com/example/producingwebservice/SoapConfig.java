@@ -20,6 +20,8 @@ public class SoapConfig
         // which configures the annotation-driven Spring-WS programming model.
         extends WsConfigurerAdapter {
 
+    public static final String TARGET_NAMESPACE = "http://spring.io/guides/gs-producing-web-service";
+
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
@@ -42,7 +44,7 @@ public class SoapConfig
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("CountriesPort");
         wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://spring.io/guides/gs-producing-web-service");
+        wsdl11Definition.setTargetNamespace(TARGET_NAMESPACE);
         wsdl11Definition.setSchema(countriesSchema);
         return wsdl11Definition;
     }
