@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Maven Config:
-    basics:                https://www.baeldung.com/maven
-    multi-module-project:  https://www.baeldung.com/maven-multi-module
+    basics:                         https://www.baeldung.com/maven
+    multi-module-project:           https://www.baeldung.com/maven-multi-module
+    Built-in Lifecycle Bindings:    https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Built-in_Lifecycle_Bindings
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -47,7 +48,7 @@
 
     <profiles>
         <profile>
-            <id>java11</id>
+            <id>jdk 11 and higher</id>
             <activation>
                 <jdk>[11,)</jdk>
             </activation>
