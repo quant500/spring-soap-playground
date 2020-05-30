@@ -14,12 +14,12 @@ import io.spring.guides.gs_producing_web_service.GetCountryResponse;
  * This SOAP Endpoint handles all incoming requests.
  */
 @Endpoint // registers the class with Spring WS as a Web Service Endpoint
-public class CountryEndpoint {
+public class CountrySoapEndpoint {
     private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
     private final CountryRepository countryRepository;
 
     @Autowired
-    public CountryEndpoint(CountryRepository countryRepository) {
+    public CountrySoapEndpoint(CountryRepository countryRepository) {
         this.countryRepository = countryRepository;
     }
 
