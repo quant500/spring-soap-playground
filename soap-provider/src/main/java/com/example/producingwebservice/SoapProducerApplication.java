@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProducingWebServiceApplication {
+public class SoapProducerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProducingWebServiceApplication.class, args);
+        SpringApplication.run(SoapProducerApplication.class, args);
     }
 }

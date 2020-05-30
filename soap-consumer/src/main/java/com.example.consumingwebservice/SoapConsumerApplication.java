@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Bean;
 import com.example.consumingwebservice.wsdl.GetCountryResponse;
 
 @SpringBootApplication
-public class ConsumingWebServiceApplication {
+public class SoapConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConsumingWebServiceApplication.class, args);
+        SpringApplication.run(SoapConsumerApplication.class, args);
     }
 
     @Bean

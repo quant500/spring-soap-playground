@@ -15,7 +15,7 @@ import org.springframework.xml.xsd.XsdSchema;
 // enables SOAP Web Service features in this Spring Boot application
 @EnableWs
 @Configuration
-public class WebServiceConfig
+public class SoapConfig
         // The WebServiceConfig class extends the WsConfigurerAdapter base class,
         // which configures the annotation-driven Spring-WS programming model.
         extends WsConfigurerAdapter {
