@@ -18,11 +18,6 @@ public class CountrySoapProviderEndpoint {
     private static final String NAMESPACE_URI = "http://domain.ch/ws/country-namespace";
     private final CountryDataRepository countryDataRepository;
 
-    @Autowired
-    public CountrySoapProviderEndpoint(CountryDataRepository countryDataRepository) {
-        this.countryDataRepository = countryDataRepository;
-    }
-
     // defines the handler method according to the namespace and localPart attributes
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
     // indicates that this method returns a value to be mapped to the response payload
@@ -35,5 +30,10 @@ public class CountrySoapProviderEndpoint {
         response.setCountry(countryDataRepository.findCountry(request.getName()));
 
         return response;
+    }
+
+    @Autowired
+    public CountrySoapProviderEndpoint(CountryDataRepository countryDataRepository) {
+        this.countryDataRepository = countryDataRepository;
     }
 }
