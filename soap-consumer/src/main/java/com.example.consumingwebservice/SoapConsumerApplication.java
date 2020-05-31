@@ -3,6 +3,7 @@ package com.example.consumingwebservice;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import com.example.consumingwebservice.wsdl.GetCountryResponse;
@@ -11,7 +12,9 @@ import com.example.consumingwebservice.wsdl.GetCountryResponse;
 public class SoapConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SoapConsumerApplication.class, args);
+        // In einer Spring-Boot-Anwendung wird der Spring-Kontext über die Klasse SpringApplication erzeugt
+        ConfigurableApplicationContext ctx = SpringApplication.run(SoapConsumerApplication.class, args);
+        System.out.println("---> ctx = " + ctx);
     }
 
     @Bean

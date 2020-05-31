@@ -18,6 +18,15 @@ public class CountrySoapProviderEndpoint {
     private static final String NAMESPACE_URI = "http://domain.ch/ws/country-namespace";
     private final CountryDataRepository countryDataRepository;
 
+    /*
+    Der Konstruktor im Beispiel muss nicht näher markiert werden. Gibt es mehr als einen Konstruktor, so muss derjenige,
+    der genutzt werden soll, mit der Spring-Annotation @Autowired oder dem JSR-330-Pendant @Inject markiert werden.
+     */
+    @Autowired
+    public CountrySoapProviderEndpoint(CountryDataRepository countryDataRepository) {
+        this.countryDataRepository = countryDataRepository;
+    }
+
     // defines the handler method according to the namespace and localPart attributes
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
     // indicates that this method returns a value to be mapped to the response payload
@@ -32,8 +41,4 @@ public class CountrySoapProviderEndpoint {
         return response;
     }
 
-    @Autowired
-    public CountrySoapProviderEndpoint(CountryDataRepository countryDataRepository) {
-        this.countryDataRepository = countryDataRepository;
-    }
 }
