@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 @Configuration
-public class CountryConfiguration {
+public class CountrySoapConsumerConfiguration {
     public static final String CONTEXT_PATH = "com.example.consumingwebservice.wsdl";
     public static final String DEFAULT_URI = "http://localhost:8080/ws";
 
