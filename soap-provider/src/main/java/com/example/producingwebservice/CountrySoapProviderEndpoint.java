@@ -1,6 +1,6 @@
 package com.example.producingwebservice;
 
-import com.example.producingwebservice.mockdata.CountryRepository;
+import com.example.producingwebservice.mockdata.CountryDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -14,13 +14,13 @@ import ch.domain.ws.country_namespace.GetCountryResponse;
  * This SOAP Endpoint handles all incoming requests.
  */
 @Endpoint // registers the class with Spring WS as a Web Service Endpoint
-public class CountrySoapEndpoint {
+public class CountrySoapProviderEndpoint {
     private static final String NAMESPACE_URI = "http://domain.ch/ws/country-namespace";
-    private final CountryRepository countryRepository;
+    private final CountryDataRepository countryDataRepository;
 
     @Autowired
-    public CountrySoapEndpoint(CountryRepository countryRepository) {
-        this.countryRepository = countryRepository;
+    public CountrySoapProviderEndpoint(CountryDataRepository countryDataRepository) {
+        this.countryDataRepository = countryDataRepository;
     }
 
     // defines the handler method according to the namespace and localPart attributes
@@ -32,7 +32,7 @@ public class CountrySoapEndpoint {
             @RequestPayload GetCountryRequest request
     ) {
         GetCountryResponse response = new GetCountryResponse();
-        response.setCountry(countryRepository.findCountry(request.getName()));
+        response.setCountry(countryDataRepository.findCountry(request.getName()));
 
         return response;
     }

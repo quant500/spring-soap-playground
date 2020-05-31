@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 @Component
-public class CountryRepository {
+public class CountryDataRepository {
     private static final Map<String, Country> countries = new HashMap<>();
 
     @PostConstruct
