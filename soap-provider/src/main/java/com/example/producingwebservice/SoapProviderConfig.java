@@ -22,6 +22,7 @@ public class SoapProviderConfig
 
     public static final String TARGET_NAMESPACE = "http://domain.ch/ws/country-namespace";
 
+    // Bei mehrfachem Aufruf Methode bedeutet nicht, dass mehrere Instanzen von ServletRegistrationBean erzeugt werden
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
@@ -37,6 +38,7 @@ public class SoapProviderConfig
         return new ServletRegistrationBean(servlet, "/ws/*");
     }
 
+    // Bei mehrfachem Aufruf Methode bedeutet nicht, dass mehrere Instanzen von DefaultWsdl11Definition erzeugt werden
     @Bean(name = "countries")
     // let's create a DefaultWsdl11Definition object. This exposes a standard WSDL 1.1 using an XsdSchema.
     // The WSDL name will be the same as the bean name.
