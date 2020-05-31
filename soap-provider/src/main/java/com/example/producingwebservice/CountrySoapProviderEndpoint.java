@@ -33,10 +33,10 @@ public class CountrySoapProviderEndpoint {
     @ResponsePayload
     public GetCountryResponse getCountry(
             //  indicates that this method accepts a parameter to be mapped from the incoming request
-            @RequestPayload GetCountryRequest request
+            @RequestPayload GetCountryRequest getCountryRequest
     ) {
         GetCountryResponse response = new GetCountryResponse();
-        response.setCountry(countryDataRepository.findCountry(request.getName()));
+        response.setCountry(countryDataRepository.findCountry(getCountryRequest.getName()));
 
         return response;
     }
